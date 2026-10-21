@@ -34,34 +34,52 @@ Explanation: No triplet in the array sums to 24.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-21T09:43:18.011Z  
+**Submitted:** 2026-10-21T10:03:54.654Z  
 
 ```java
 class Solution {
 	public boolean hasTripletSum(int arr[], int target) {
 		// code Here
 		int n = arr.length;
+		Arrays.sort(arr);
 		
-		
-		for (int i = 0; i<n-2; i++) {
-		    
-		HashMap <Integer,Integer>map=new HashMap<>();
-		
-			int nt = target - arr[i];
+		for (int i = 0; i<n - 2; i++) {
+			int l = i + 1;
+			int r = n - 1;
 			
-			for (int j = i + 1; j<n; j++) {
-				int t = nt - arr[j];
-				
-				if (map.containsKey(t)) {
-			
-				return true;
+			while (l<r) {
+				int sum=arr[i]+arr[l]+arr[r];
+				if (sum == target) {
+					return true;
 				}
-				
-				map.put(arr[j],j);
-				
+				else if (sum<target) {
+					l++;
+				}
+				else {
+					r--;
+				}
 			}
 		}
-		return false;
+			return false;
+		
+		// 			HashMap <Integer, Integer>map = new HashMap<>();
+		
+		// 			int nt = target - arr[i];
+		
+		// 			for (int j = i + 1; j<n; j++) {
+		// 				int t = nt - arr[j];
+		
+		// 				if (map.containsKey(t)) {
+		
+		// 					return true;
+		// 				}
+		
+		// 				map.put(arr[j], j);
+		
+		// 			}
+		// 		}
+		// 		return false;
+		
 	}
 }
 
