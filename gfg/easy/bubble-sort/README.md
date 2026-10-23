@@ -32,25 +32,28 @@ Explanation: An array that is already sorted should remain unchanged after apply
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-23T08:38:34.043Z  
+**Submitted:** 2026-10-23T08:42:15.471Z  
 
 ```java
 class Solution {
-    public void bubbleSort(int[] arr) {
-        int n = arr.length;
-
-        for (int i = 1; i < n; i++) {
-            for (int j = n - 1; j >= i; j--) {
-                if (arr[j - 1] > arr[j]) {
-
-                    int temp = arr[j - 1];
-                    arr[j - 1] = arr[j];
-                    arr[j] = temp;
-                }
-            }
-        }
-    }
+	public void bubbleSort(int[] arr) {
+		// code here
+		int n = arr.length;
+		
+		for (int i = 1; i<n; i++) {
+			
+			for (int j = n - 1; j>0; j--) {
+				if (arr[j-1] > arr[j]) {
+				    
+					int temp = arr[j-1];
+					arr[j-1] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+	}
 }
+
 ```
 
 ---
