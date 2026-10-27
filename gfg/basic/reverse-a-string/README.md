@@ -29,19 +29,35 @@ Output: "a"
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-27T09:18:34.460Z  
+**Submitted:** 2026-10-27T09:27:02.672Z  
 
 ```java
 class Solution {
-    public static String reverseString(String s) {
-        // code here
-
-        StringBuilder sb= new StringBuilder(s);
-        
-        sb.reverse();
-        return sb.toString();
-    }
+	public static String reverseString(String s) {
+		// code here
+		
+		// StringBuilder sb= new StringBuilder(s);
+		
+		// sb.reverse();
+		// return sb.toString();
+		char[] arr = s.toCharArray();
+		
+		
+		int st = 0;
+		int ed = arr.length-1;
+		
+		while (st<ed) {
+			char temp = arr[st];
+			arr[st] = arr[ed];
+			arr[ed] = temp;
+			st++;
+			ed--;
+		}
+		
+		return new String(arr);
+	}
 }
+
 ```
 
 ---
