@@ -32,7 +32,7 @@ Explanation: An array that is already sorted should remain unchanged after apply
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-23T08:52:23.636Z  
+**Submitted:** 2026-10-27T08:27:25.086Z  
 
 ```java
 class Solution {
