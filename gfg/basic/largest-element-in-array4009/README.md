@@ -31,19 +31,24 @@ Explanation: There is only one element which is the largest.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-04T17:48:12.876Z  
+**Submitted:** 2026-11-04T17:54:10.523Z  
 
 ```java
 class Solution {
-    public static int largest(int[] arr) {
-        
-        int n = arr.length;
-        
-        Arrays.sort(arr);
-        
-        return arr[n-1];
-        
-    }
+	public static int largest(int[] arr) {
+		
+		int n = arr.length;
+		
+		int max = Integer.MIN_VALUE;
+		
+		for (int i = 0; i<n; i++) {
+			if (arr[i]>max) {
+				max = arr[i];
+			}
+		}
+		
+		return max;
+	}
 }
 
 ```
