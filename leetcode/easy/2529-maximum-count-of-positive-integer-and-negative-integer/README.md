@@ -54,9 +54,9 @@ Explanation: There are 4 positive integers and 0 negative integers. The maximum 
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 41.6 MB  
-**Submitted:** 2026-11-05T16:53:12.015Z  
+**Runtime:** 1 ms (beats 33.38%)  
+**Memory:** 46.4 MB (beats 93.69%)  
+**Submitted:** 2026-11-05T16:53:19.930Z  
 
 ```java
 class Solution {
