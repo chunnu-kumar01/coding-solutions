@@ -25,7 +25,7 @@ Explanation: There are no 0s in the given array, so the modified array is [1, 1]
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-13T16:41:00.421Z  
+**Submitted:** 2026-11-13T16:42:23.311Z  
 
 ```java
 class Solution {
@@ -38,23 +38,18 @@ class Solution {
 			if (arr[i] == 0) {
 				i++;
 			}
-			if (arr[j] == 1) {
+		else if (arr[j] == 1) {
 				j--;
 			}
-			if(i>j)break;
-			if (arr[i] == 1 && arr[j] == 0) {
+		
+		else if (arr[i] == 1 && arr[j] == 0) {
 				int temp = arr[i];
 				arr[i] = arr[j];
 				arr[j] = temp;
 				i++;
 				j--;
 			}
-			else if (arr[i] == 1 && arr[j] == 1) {
-				j--;
-			}
-			 else if ((arr[i] == 0 && arr[j] == 0)) {
-				i++;
-			}
+
 		}
 		
 	}
