@@ -8,23 +8,18 @@ class Solution {
 			if (arr[i] == 0) {
 				i++;
 			}
-			if (arr[j] == 1) {
+		else if (arr[j] == 1) {
 				j--;
 			}
-			if(i>j)break;
-			if (arr[i] == 1 && arr[j] == 0) {
+		
+		else if (arr[i] == 1 && arr[j] == 0) {
 				int temp = arr[i];
 				arr[i] = arr[j];
 				arr[j] = temp;
 				i++;
 				j--;
 			}
-			else if (arr[i] == 1 && arr[j] == 1) {
-				j--;
-			}
-			 else if ((arr[i] == 0 && arr[j] == 0)) {
-				i++;
-			}
+
 		}
 		
 	}
