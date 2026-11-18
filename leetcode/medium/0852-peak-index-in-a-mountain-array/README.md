@@ -44,8 +44,8 @@ Java
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 42.2 MB  
-**Submitted:** 2026-11-18T09:45:55.226Z  
+**Memory:** 41.8 MB  
+**Submitted:** 2026-11-18T09:46:16.743Z  
 
 ```java
 class Solution {
@@ -53,7 +53,6 @@ class Solution {
         int n = arr.length;
         int low = 0;
         int high = n - 1;
-        int ans=-1;
 
         while (low <= high) {
             int mid = low + (high - low) / 2;
@@ -71,7 +70,7 @@ class Solution {
 
             
         }
-        return ans;
+        return -1;
 
     }
 }
