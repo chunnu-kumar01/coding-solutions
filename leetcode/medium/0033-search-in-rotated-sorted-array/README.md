@@ -54,8 +54,8 @@ Output: -1
 
 **Language:** Java  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 43.2 MB (beats 86.21%)  
-**Submitted:** 2026-11-12T14:09:24.533Z  
+**Memory:** 43.4 MB (beats 73.79%)  
+**Submitted:** 2026-11-18T09:19:48.058Z  
 
 ```java
 class Solution {
@@ -68,6 +68,7 @@ class Solution {
 
         // }
         // return ans;
+        int ans = -1;
         int n = nums.length;
         int low = 0;
         int high = n - 1;
@@ -76,43 +77,31 @@ class Solution {
             int mid = low + (high - low) / 2;
 
             if (nums[mid] == target) {
-
                 return mid;
-
             }
-            // for left half sorted
 
-            if (nums[low] <= nums[mid] ) {
+            else if (nums[low] <= nums[mid]) {
 
-                if (target >=nums[low]&&target<nums[mid] ) 
-                {
-                     high = mid - 1;
-                } 
-                else 
-                {
+                if (target >= nums[low] && target < nums[mid]) {
+                    high = mid - 1;
+
+                } else {
                     low = mid + 1;
-                   
                 }
 
             }
 
-            //for right half sorted
-            else {
+            else if (nums[low] >= nums[mid]) {
 
-                if (target > nums[mid] && target <= nums[high]) 
-                {
+                if (target >= nums[mid] && target <= nums[high]) {
                     low = mid + 1;
-                } else
-                {
+                } else {
                     high = mid - 1;
                 }
 
             }
-
         }
-
-        return -1;
-
+        return ans;
     }
 }
 ```
