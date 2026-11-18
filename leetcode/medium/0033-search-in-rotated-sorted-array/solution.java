@@ -8,6 +8,7 @@ class Solution {
 
         // }
         // return ans;
+        int ans = -1;
         int n = nums.length;
         int low = 0;
         int high = n - 1;
@@ -16,42 +17,30 @@ class Solution {
             int mid = low + (high - low) / 2;
 
             if (nums[mid] == target) {
-
                 return mid;
-
             }
-            // for left half sorted
 
-            if (nums[low] <= nums[mid] ) {
+            else if (nums[low] <= nums[mid]) {
 
-                if (target >=nums[low]&&target<nums[mid] ) 
-                {
-                     high = mid - 1;
-                } 
-                else 
-                {
+                if (target >= nums[low] && target < nums[mid]) {
+                    high = mid - 1;
+
+                } else {
                     low = mid + 1;
-                   
                 }
 
             }
 
-            //for right half sorted
-            else {
+            else if (nums[low] >= nums[mid]) {
 
-                if (target > nums[mid] && target <= nums[high]) 
-                {
+                if (target >= nums[mid] && target <= nums[high]) {
                     low = mid + 1;
-                } else
-                {
+                } else {
                     high = mid - 1;
                 }
 
             }
-
         }
-
-        return -1;
-
+        return ans;
     }
 }
