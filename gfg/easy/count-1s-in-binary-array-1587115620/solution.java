@@ -1,16 +1,23 @@
 class Solution {
 	public int countOnes(int[] arr) {
 		// code here
-		int n = arr.length;
 		
-		int ans = 0;
+		int l = 0;
+		int r = arr.length - 1;
+		int ans = r + 1;
 		
-		for (int x:arr) {
-			if (x == 1) {
-				ans++;
-			}
+		while (l <= r) {
+			int mid = l + (r - l)/2;
 			
+			if (arr[mid] == 1) {
+				l = mid + 1;
+			}
+			else {
+				ans = mid;
+				r = mid - 1;
+			}
 		}
+		
 		return ans;
 	}
 }
