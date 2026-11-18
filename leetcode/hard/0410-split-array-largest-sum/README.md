@@ -45,18 +45,61 @@ The best way is to split it into [1,2,3] and [4,5], where the largest sum among 
 ## Solution
 
 **Language:** Java  
-**Runtime:** 2 ms  
-**Memory:** 41.8 MB  
-**Submitted:** 2026-11-18T10:59:41.418Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 42.4 MB (beats 90.58%)  
+**Submitted:** 2026-11-18T11:05:16.449Z  
 
 ```java
+
 class Solution {
+
+    boolean isPossible(int[] nums, int k, int mid) {
+
+        int count = 1;
+        int sum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (sum + nums[i] <= mid) {
+                sum += nums[i];
+            } else {
+                count++;
+                sum = nums[i];
+            }
+
+            if (count > k) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public int splitArray(int[] nums, int k) {
-        int n = nums.length;
-        Arrays.sort(nums);
-        return (n) + (n -1);
+
+        int low = 0;
+        int high = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            low = Math.max(low, nums[i]);
+            high += nums[i];
+        }
+
+        while (low <= high) {
+
+            int mid = low + (high - low) / 2;
+
+            if (isPossible(nums, k, mid)) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return low;
     }
 }
+
 ```
 
 ---
