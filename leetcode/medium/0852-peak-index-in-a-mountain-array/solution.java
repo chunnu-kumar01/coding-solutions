@@ -3,7 +3,6 @@ class Solution {
         int n = arr.length;
         int low = 0;
         int high = n - 1;
-        int ans=-1;
 
         while (low <= high) {
             int mid = low + (high - low) / 2;
@@ -21,7 +20,7 @@ class Solution {
 
             
         }
-        return ans;
+        return -1;
 
     }
 }
